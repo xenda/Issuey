@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+ <title>Issue Tracker v0.1</title>
+</head>
+
+<body>
+<h1><%= link_to "Home",root_path %></h1>
+
+<ul>
+  <li><%= link_to "About us", about_us_path %> </li>
+  <li><%= link_to "Features",features_path %></li>
+  <li><%= link_to "Contact us",contact_us_path %></li>
+</ul>
+
+<%= yield %>
+
+
+</body>
+</html>
+

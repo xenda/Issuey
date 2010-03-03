@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Code</th>
+    <th>Description</th>
+  </tr>
+
+<% @issues.each do |issue| %>
+  <tr>
+    <td><%=h issue.title %></td>
+    <td><%=h issue.code %></td>
+    <td><%=h issue.description %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "Nueva incidencia", new_issue_path %>

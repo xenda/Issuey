@@ -1,0 +1,9 @@
+<h1>Editing issue</h1>
+
+<% form_for(@issue) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial =>"fields", :object=>f %>
+<% end %>
+
+<%= link_to 'Show', @issue %> |
+<%= link_to 'Back', issues_path %>
