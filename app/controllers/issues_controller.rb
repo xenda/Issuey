@@ -1,4 +1,5 @@
 class IssuesController < ApplicationController
+  
   # GET /issues
   # GET /issues.xml
   def index
@@ -75,7 +76,7 @@ class IssuesController < ApplicationController
   # DELETE /issues/1.xml
   def destroy
     @issue = Issue.find(params[:id])
-    @issue.destroy
+    @issue. 
 
     respond_to do |format|
       format.html { redirect_to(issues_url) }

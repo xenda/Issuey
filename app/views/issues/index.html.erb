@@ -12,7 +12,6 @@
     <td><%=h issue.title %></td>
     <td><%=h issue.code %></td>
     <td><%=h issue.description %></td>
-    <td><%= link_to 'Show', issue %></td>
     <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
     <td><%= link_to 'Destroy', issue, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
