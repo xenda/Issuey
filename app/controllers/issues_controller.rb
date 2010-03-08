@@ -1,5 +1,7 @@
 class IssuesController < ApplicationController
   
+  before_filter :logged_only
+  
   # GET /issues
   # GET /issues.xml
   def index

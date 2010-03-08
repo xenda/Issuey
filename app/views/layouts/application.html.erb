@@ -13,6 +13,7 @@
   <li><%= link_to "About us", about_us_path %> </li>
   <li><%= link_to "Features",features_path %></li>
   <li><%= link_to "Contact us",contact_us_path %></li>
+  <%= link_to "Cerrar sesion", {:controller=>"session",:action=>"destroy"} %>
 </ul>
 
 <%= yield %>
