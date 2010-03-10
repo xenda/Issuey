@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
- <title>Issue Tracker v0.1 <%= show_title %></title>
+ <title>Issue Tracker v0.1 </title>
  <%= stylesheet_link_tag "scaffold", "style"  %>
 
 </head>
@@ -10,10 +10,11 @@
 <body>
 <h1><%= link_to "Home",root_path %></h1>
 
-<ul>
+<ul id="menu">
   <li><%= link_to "About us", about_us_path %> </li>
   <li><%= link_to "Features",features_path %></li>
   <li><%= link_to "Contact us",contact_us_path %></li>
+  <li><%= link_to "Feed",rss_path("atom") %></li>
   <%= link_to "Cerrar sesion", {:controller=>"session",:action=>"destroy"} %>
 </ul>
 
