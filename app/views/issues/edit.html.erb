@@ -2,7 +2,7 @@
 
 <h1>Editing issue</h1>
 
-<% form_for(@issue) do |f| %>
+<% form_for(@issue,:html => { :multipart => true } ) do |f| %>
   <%= f.error_messages %>
 
   <%= render :partial =>"fields", :object=>f %>

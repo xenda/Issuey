@@ -12,7 +12,38 @@
   <b>Description:</b>
   <%=h @issue.description %>
 </p>
+<p>
+  <%= image_tag @issue.screenshot.url %>
+  
+</p>
 
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
+
+<div>
+  <ul id="comments_list">
+    <%= render :partial=>"comment", :collection=>@issue.comments %>
+  </ul>
+  
+</div>
+
+<% remote_form_for(Comment.new) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :issue_id %><br />
+    <%= hidden_field_tag "comment[issue_id]", @issue.id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

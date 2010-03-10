@@ -7,7 +7,7 @@
 
 <% @issues.each do |issue| %>
   <tr>
-    <td><%=h issue.title %></td>
+    <td><%= link_to h(issue.title), issue %></td>
     <td><%=h issue.code %></td>
     <td><%=h issue.description %></td>
   </tr>

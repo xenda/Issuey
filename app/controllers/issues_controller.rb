@@ -79,9 +79,8 @@ class IssuesController < ApplicationController
   # DELETE /issues/1
   # DELETE /issues/1.xml
   def destroy
-    @issue = Issue.find(params[:id])
-    @issue. 
-
+    @issue = Issue.find_by_title(params[:id])
+    @issue.destroy
     respond_to do |format|
       format.html { redirect_to(issues_url) }
       format.xml  { head :ok }
