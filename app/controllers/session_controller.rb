@@ -4,12 +4,18 @@ class SessionController < ApplicationController
     @user = User.new
   end
   
-  def new
+  def create
     @user = User.new(params[:user])
     @db_user = User.find_by_email_and_password(@user.email,@user.password)
     if @db_user
       session[:current_user] = @db_user.id
-      redirect_to session[:last_url]
+      flash[:notice] = "Bienvenido #{@db_user.email}"
+      if session[:last_url]
+        redirect_to session[:last_url] 
+      else
+        redirect_to root_path
+      end
+      
     else
       session[:current_user] = nil
       flash[:error] = "Datos inválidos"

@@ -1,11 +1,11 @@
 
 <%= flash[:error] %>
-<% form_for @user, :url=>{:action=>"new"} do |f| %>
+<% form_for @user, :url=>{:action=>"create"} do |f| %>
 <%= f.label :email %> 
 <%= f.text_field :email %> 
 <br />
 <%= f.label :password %> 
-<%= f.text_field :password %> 
+<%= f.password_field :password %> 
 
 
 <%= f.submit "Iniciar sesión" %>

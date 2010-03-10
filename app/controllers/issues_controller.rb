@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   
   before_filter :logged_only
-  
+
   # GET /issues
   # GET /issues.xml
   def index
@@ -10,6 +10,8 @@ class IssuesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @issues }
+      format.json { render :json =>@issues }
+      format.atom 
     end
   end
 

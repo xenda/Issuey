@@ -48,9 +48,11 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
 
 
-  map.about_us "/about-us", :controller=>"pages", :action=>"about_us"
+  map.about_us "/about-us/:page", :controller=>"pages", :action=>"about_us"
   map.features '/features', :controller=>"pages", :action=>"features"
   map.contact_us '/contact-us', :controller=>"pages", :action=>"contact"
+  
+  map.rss 'index.:format', :controller=>"issues", :action=>"index"
   
   map.root :controller=>"pages", :action=>"home"
 end

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def about_us
+    render "contact" if params[:page]
   end
 
   def contact

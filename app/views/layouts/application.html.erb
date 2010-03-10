@@ -2,8 +2,9 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
- <title>Issue Tracker v0.1</title>
- <%= stylesheet_link_tag "scaffold"  %>
+ <title>Issue Tracker v0.1 <%= show_title %></title>
+ <%= stylesheet_link_tag "scaffold", "style"  %>
+
 </head>
 
 <body>
@@ -16,9 +17,13 @@
   <%= link_to "Cerrar sesion", {:controller=>"session",:action=>"destroy"} %>
 </ul>
 
+<%= flash[:notice] %>
+
 <%= yield %>
 
+<%= yield :javascripts %>
 
 </body>
 </html>
+
 
